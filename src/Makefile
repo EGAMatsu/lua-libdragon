@@ -113,6 +113,8 @@ c89:
 	@echo '*** with LUA_USE_C89 to ensure consistency'
 	@echo ''
 
+N64_C_LUA_FLAGS = $(N64_C_AND_CXX_FLAGS) -std=c89
+N64_LD_LUAFLAGS = -g -L$(N64_LIBDIR) -ldragon -lm -ldragonsys -Tn64.ld
 libdragon:
 	$(MAKE) $(ALL) \
 		SYSCFLAGS="-DLUA_USE_C89" \
